@@ -7,7 +7,7 @@
 <body class="container">
     <table class="table table-striped">
         <thead>
-            <th>Data in Request</th><th></th>
+            <th>Article Data</th><th></th>
         </thead>
         <tbody>
     {% for key,value in data.iteritems() %}
@@ -15,6 +15,78 @@
     {% endfor %}
         </tbody>
     </table>
+    <table class="table table-striped">
+        <thead>
+            <th>Author Data</th><th></th>
+        </thead>
+        <tbody>
+        {% for author in authors %}
+            {% for key,value in author.iteritems() %}
+               <tr><td>{{key|capitalize}}:</td><td>{{value}}</td></tr>
+            {% endfor %}
+        <tr><td></td><td></td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if funders!=[] %}
+    <table class="table table-striped">
+        <thead>
+            <th>Funders Data</th><th></th>
+        </thead>
+        <tbody>
+        {% for funder in funders %}
+            {% for key,value in funder.iteritems() %}
+               <tr><td>{{key|capitalize}}:</td><td>{{value}}</td></tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    {% if contributions %}
+    <table class="table table-striped">
+        <thead>
+            <th>Contributions Data</th><th></th>
+        </thead>
+        <tbody>
+        {% for contributor in contributions %}
+            {% for key,value in contributor.iteritems() %}
+               <tr><td>{{key|capitalize}}:</td><td>{{value}}</td></tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    {% if affiliations %}
+    <table class="table table-striped">
+        <thead>
+            <th>Affiliations Data</th><th></th>
+        </thead>
+        <tbody>
+        {% for affiliate in affiliations %}
+            {% for key,value in affiliate.iteritems() %}
+               <tr><td>{{key|capitalize}}:</td><td>{{value}}</td></tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    {% if terms %}
+    <table class="table table-striped">
+        <thead>
+            <th>Terms Data</th><th></th>
+        </thead>
+        <tbody>
+        {% for term in terms %}
+                <tr><td>{{term|capitalize}}</td><td></td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
     <table class="table table-striped">
         <thead>
             <th>Files</th><th></th>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available URLS</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+    <table class="table table-striped">
+        <thead>
+            <th colspan="2">Available URLS</th>
+        </thead>
+        <tbody>
+            {% for url in urls %}
+                <tr><td><a href="{{url['url']}}">{{url['title']}}</a></td><td>{{url['url']}}</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</html>
