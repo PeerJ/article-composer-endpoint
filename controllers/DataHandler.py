@@ -33,6 +33,9 @@ class DataHandler(tornado.web.RequestHandler):
             args_dict['doc_id']=doc_id
             del args_dict['_id']
 
+        if "_attachments" in args_dict:
+            del args_dict["_attachments"]
+
         for key in args_dict:
             print key
 
