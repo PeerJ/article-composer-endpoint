@@ -25,11 +25,16 @@ class DataHandler(tornado.web.RequestHandler):
 
         ##Get Arguments
 
+        args = self.get_argument('article',None)
 
+        args_dict = json.loads(args)
+        if "_id" in args_dict:
+            doc_id=args_dict['_id']
+            args_dict['doc_id']=doc_id
+            del args_dict['_id']
 
-        for key,value in self.request.arguments.iteritems():
-            args_dict[key]=value[0]
-
+        for key in args_dict:
+            print key
 
         if not args_dict:
             raise tornado.web.HTTPError(400,'No Data Found')
